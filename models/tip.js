@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
-// export{
-//     Tip
-// }
+export{
+    Tip
+}
 
 const tipSchema = new Schema({
     detail: {
