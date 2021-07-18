@@ -6,13 +6,36 @@ export{
     create,
     show,
     flipHelpful,
-    edit
+    edit,
+    update
 }
+
+function update(req, res) {
+    Tip.findById(req.params.id)
+    .then(tip => {
+      if (tip.owner.equals(req.user.profile._id)) {
+        req.body.helpful = !!req.body.helpful
+        tip.update(req.body, {new: true})
+        .then(tip => {
+          console.log(tip)
+          res.redirect(`/tips/${tip._id}`)
+        })
+      } else {
+        
+        throw new Error("NOT AUTHORIZED")
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/tips`)
+    })
+  }
+  
 
 function edit(req, res){
     Tip.findById(req.params.id)
-    .then(taco => {
-        render("tips/edit", {
+    .then(tip => {
+        res.render("tips/edit", {
             tip,
             title: "edit"
         })
