@@ -23,6 +23,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as tipsRouter } from "./routes/tips.js"
 import { router as profilesRouter } from "./routes/profiles.js"
+import { router as portfolioRouter } from "./routes/portfolios.js"
 
 // view engine setup
 app.set(
