@@ -1,10 +1,10 @@
-// import { Tip } from "../models/tip.js"
+import { Tip } from "../models/tip.js"
 
-// export{
-//     index,
-//     create,
-//     show,
-// }
+export{
+    index,
+    create,
+    show,
+}
 
 function show(req, res){
     Tip.findById(req.params.id)
