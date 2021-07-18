@@ -20,7 +20,7 @@ function deleteTip(req, res) {
           res.redirect("/tips")
         })
       } else {
-        // Disallow the request (someone other than the owner made the request)
+
         throw new Error("NOT AUTHORIZED")
       }
     })
