@@ -11,5 +11,6 @@ const router = Router()
 
 router.get("/", tipsCtrl.index)
 router.get("/:id", tipsCtrl.show)
+router.get("/:id/edit", isLoggedIn, tipsCtrl.edit)
 router.post("/", isLoggedIn, tipsCtrl.create)
 router.put("/:id/flip-helpful", isLoggedIn, tipsCtrl.flipHelpful)

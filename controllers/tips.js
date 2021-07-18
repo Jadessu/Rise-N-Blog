@@ -1,10 +1,42 @@
+import { render } from "ejs"
 import { Tip } from "../models/tip.js"
 
 export{
     index,
     create,
     show,
+    flipHelpful,
+    edit
 }
+
+function edit(req, res){
+    Tip.findById(req.params.id)
+    .then(taco => {
+        render("tips/edit", {
+            tip,
+            title: "edit"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/tips")
+    })
+}
+
+function flipHelpful(req, res) {
+    Tip.findById(req.params.id)
+    .then(tip => {
+      tip.helpful = !tip.helpful
+      tip.save()
+      .then(()=> {
+        res.redirect(`/tips/${tip._id}`)
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/tips')
+    })
+  }
 
 function show(req, res){
     Tip.findById(req.params.id)
