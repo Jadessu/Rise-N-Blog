@@ -1,7 +1,7 @@
-// export {
-//     passUserToView,
-//     isLoggedIn,
-// }
+export {
+    passUserToView,
+    isLoggedIn,
+}
 
 function passUserToView (req, res, next){
     res.locals.user = req.user ? req.user : null
