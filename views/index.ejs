@@ -1,16 +1,47 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
 
-<main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img 
-        src="<%= user.profile.avatar %>" 
-        alt="<%= user.profile.name %> avatar"
-      >
-    </div>
-  <% } %>
-</main>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-<%- include('./partials/footer') %>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><a href="#">^UPLIFT^</a></div>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="/tips">Tips</a></li>
+          <li><a href="/portfolios">Portfolios</a></li>
+          <li><a href="/users">Users</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+        <div class="buttons"> -->
+          <!-- <input type="button" value="login">  -->
+          <% if (user) { %>
+            <a href="/auth/logout">Logout</a>
+          <% } else { %>
+            <a href="/auth/google" class="siwg-link">
+              <button type="submit" class="siwg">
+                <img id="siwg-image" alt="Sign in with Google" />
+              </button>
+            </a>
+          <% } %>
+        <!-- </div>
+      </nav>
+        <div class="text-content">
+          <h2>Welcome,<br><%= user ? user.profile.name : "engineer" %></h2> <br>
+          <p>Here is your daily quote for today: </p>
+          <p>“The last three or four reps is what makes the muscle grow. This area of pain divides the champion from someone else who is not a champion. That’s what most people lack, having the guts to go on and just say they’ll go through the pain no matter what happens.” <br>
+            —Arnold Schwarzenegger.</p>
+        </div>
+      </header>
+</body>
+</html> -->
