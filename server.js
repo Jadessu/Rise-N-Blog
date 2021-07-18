@@ -23,7 +23,8 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as tipsRouter } from "./routes/tips.js"
 import { router as profilesRouter } from "./routes/profiles.js"
-import { router as portfolioRouter } from "./routes/portfolios.js"
+import { router as portfoliosRouter } from "./routes/portfolios.js"
+
 
 // view engine setup
 app.set(
@@ -67,6 +68,8 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use("/tips", tipsRouter)
 app.use("/profiles", profilesRouter)
+app.use("/portfolios", portfoliosRouter)
+
 
 
 // catch 404 and forward to error handler
