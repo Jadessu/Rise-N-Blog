@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <section>
+        <p>From the brilliant mind of <%= tip.owner.name %></p>
+        <h1><%= tip.detail %> 🌮</h1>
+  <h2>This tip is <%= tip.helpful ? 'Helpful!' : 'Not Helpful 😫' %></h2>
+	<% if (user) { %>
+    <form action="/tips/<%= tip._id %>/flip-helpful?_method=PUT" method="POST">
+        <button type="submit">
+            Make tip <%= tip.helpful ? 'not helpful' : 'helpful' %>
+          </button>
+         </form>
+       <% } %>
+       
+    </section>
 </body>
 </html>
