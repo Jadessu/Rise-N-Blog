@@ -6,21 +6,21 @@
 //     show,
 // }
 
-// function show(req, res){
-//     Tip.findById(req.params.id)
-//     .populate("owner")
-//     .then(tip => {
-//         res.render("tips/show", {
-//             tip,
-//             title: "Tip Details"
-//         })
-//     })
-//     .catch(err => {
-//         console.log(err)
-//         res.redirect("/tips")
-//     })
+function show(req, res){
+    Tip.findById(req.params.id)
+    .populate("owner")
+    .then(tip => {
+        res.render("tips/show", {
+            tip,
+            title: "Tip Details"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/tips")
+    })
    
-// }
+}
 
 function create(req, res){
     console.log("I am creating")
