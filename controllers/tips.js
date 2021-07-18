@@ -42,16 +42,16 @@
 
 
 
-// function index(req, res) {
-//     Tip.find({})
-//     .then(tips => {
-//       res.render("tips/index", {
-//         tips,
-//         title: "Tips"
-//       })
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.redirect("/tips")
-//     })
-//   }
+function index(req, res) {
+    Tip.find({})
+    .then(tips => {
+      res.render("tips/index", {
+        tips,
+        title: "Tips"
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/tips")
+    })
+  }
