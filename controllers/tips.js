@@ -22,23 +22,23 @@
    
 // }
 
-// function create(req, res){
-//     console.log("I am creating")
-//     console.log(req.body)
+function create(req, res){
+    console.log("I am creating")
+    console.log(req.body)
 
-//     req.body.owner = req.user.profile
-//     req.body.helpful = !!req.body.helpful
-//     Tip.create(req.body)
-//     .then(tip => {
-//         res.redirect("/tips")
-//     })
-//     .catch(err => {
-//         console.log(err)
-//         res.redirect("/tips")
-//     })
+    req.body.owner = req.user.profile
+    req.body.helpful = !!req.body.helpful
+    Tip.create(req.body)
+    .then(tip => {
+        res.redirect("/tips")
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/tips")
+    })
 
 
-// }
+}
 
 
 
