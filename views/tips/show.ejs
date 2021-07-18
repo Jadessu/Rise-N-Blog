@@ -23,6 +23,14 @@
         <p>
             <a href="/tips/<%= tip._id %>/edit"> Edit this tip!</a>
         </p>
+
+        <p>
+            <form action="/tips/<%= tip._id %>?_method=DELETE" method="POST">
+              <button type="submit">
+                Delete this tip
+              </button>
+            </form>
+          </p>
      <%  } %>
        
     </section>

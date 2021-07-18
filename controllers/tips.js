@@ -7,8 +7,29 @@ export{
     show,
     flipHelpful,
     edit,
-    update
+    update,
+    deleteTip as delete
 }
+
+function deleteTip(req, res) {
+    Tip.findById(req.params.id)
+    .then(tip => {
+      if(tip.owner.equals(req.user.profile._id)) {
+        tip.delete()
+        .then(() => {
+          res.redirect("/tips")
+        })
+      } else {
+        // Disallow the request (someone other than the owner made the request)
+        throw new Error("NOT AUTHORIZED")
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/tips')
+    })
+  }
+  
 
 function update(req, res) {
     Tip.findById(req.params.id)
