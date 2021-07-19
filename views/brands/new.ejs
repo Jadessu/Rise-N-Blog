@@ -1,0 +1,24 @@
+<div>
+    <% if (isSelf)  {%> 
+        <h2>Add a brand statement!</h2>
+        <form action="/profiles/<%= profile._id %>/brand" method="POST">
+          <label>
+            Name: 
+            <input type="text" name="name" autocomplete="off">
+          </label>
+          <label>
+            Brand Statement: 
+            <input type="text" name="summary" autocomplete="off">
+          </label>
+          <label>
+            Job: 
+            <input type="text" name="job" autocomplete="off">
+          </label>
+          <label>
+            Skills: 
+            <input type="text" name="skills" autocomplete="off">
+          </label>
+          <button type="submit">Add brand Statement</button>
+        </form>
+      <% } %>
+</div>

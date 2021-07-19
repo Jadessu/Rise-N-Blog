@@ -9,7 +9,10 @@ export{
 
 const router = Router()
 
+
 router.get("/", tipsCtrl.index)
+router.get("/new", tipsCtrl.new)
+
 router.get("/:id", tipsCtrl.show)
 router.get("/:id/edit", isLoggedIn, tipsCtrl.edit)
 router.post("/", isLoggedIn, tipsCtrl.create)

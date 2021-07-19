@@ -2,7 +2,26 @@ import { Profile } from "../models/profile.js"
 
 export{
     index,
-    show
+    show,
+    createBrand,
+
+}
+
+function createBrand(req, res){
+  console.log("this works")
+  console.log(req.body)
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.brands.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile}`)
+  })
 }
 
 function show(req, res){
@@ -19,6 +38,10 @@ function show(req, res){
           isSelf
         })
       })
+    })
+    .catch((err) => {
+      console.log(err)
+      res.redirect("/")
     })
 }
 

@@ -8,7 +8,15 @@ export{
     flipHelpful,
     edit,
     update,
-    deleteTip as delete
+    deleteTip as delete,
+    newTip as new,
+}
+
+
+function newTip(req, res){
+  res.render("tips/new", {
+    title: "Add Tip"
+  })
 }
 
 function deleteTip(req, res) {
@@ -115,7 +123,6 @@ function create(req, res){
 
 
 }
-
 
 
 function index(req, res) {
