@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,47 +8,34 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <div>
-                        <h1>Tips</h1>
-                        <h2>Here are some helpful tips</h2>
-                        <form action="/tips" method="POST">
-                        <label>
-                            Category:
-                            <input type="text" name="category" autocomplete="off" required>
-                        </label>
-                        <label>
-                            Detail:
-                            <input type="text" name="detail" autocomplete="off" required>
-                        </label>
-                        <label>
-                            Helpful?
-                            <input type="checkbox" name="helpful">
-                        </label>
-                        <button type="submit">Add Tip</button>
-                    </form>
-                        </div> -->
-
-    <div class="content-box">
-        <div class="content-title">
-            <h2>Timeline</h2>
+  
+  <% tips.forEach(tip => { %>
+    <h1> The category is <%= tip.category %> </h1>
+    <div class = "blog-post">
+        <div class = "blog-post-img">
+          <img src="https://cdn.thecoolist.com/wp-content/uploads/2016/05/Japanese-Cherry-beautiful-tree.jpg" alt="">
         </div>
-        <div class="timeline-content">
-            <ul>
-                <% tips.forEach(tip => { %>
-                    
-                
-                <li>
-                    <a href="/tips/<%= tip._id %>">
-                        <span> <%= tip.category %> </span>
-                        <h3> <%= tip.detail %> %></h3>
-                        <p>  </p>
-                        <p> This tip is <%= tip.helpful ? "helpful" : "not helpful" %></p>
-                    </a>
-                </li>
-          <%  }); %>
-            </ul>
+        <div class = "blog-post-info">
+          <div class = "blog-post-title">
+            <h2> <%= tip.title %> </h2>
+          </div>
+          
+          <div class = "blog-post-date">
+            <span>Friday</span>
+            <span>July 16, 2021 </span>
+            <h4>By <%= tip.name %></h1>
+          </div>
+          <div class = "blog-post-summary">
+            <p> <%= tip.summary %> </p>
+          </div>
+          <div class = "blog-post-read-more">
+            <a href = "/tips/<%= tip._id %>">Read More </a>
+          </div>
         </div>
-    </div>
-
+        
+        
+        </div>
+        <%  }); %>
 </body>
 </html> 
+
