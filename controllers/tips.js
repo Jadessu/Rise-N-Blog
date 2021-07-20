@@ -5,7 +5,7 @@ export{
     index,
     create,
     show,
-    flipHelpful,
+    flipEducational,
     edit,
     update,
     deleteTip as delete,
@@ -20,16 +20,18 @@ function newTip(req, res){
 }
 
 function deleteTip(req, res) {
+  console.log("this runs")
     Tip.findById(req.params.id)
     .then(tip => {
       if(tip.owner.equals(req.user.profile._id)) {
+        console.log(tip)
         tip.delete()
         .then(() => {
           res.redirect("/tips")
         })
       } else {
 
-        throw new Error("NOT AUTHORIZED")
+        throw new Error("Level 8 only")
       }
     })
     .catch(err => {
@@ -43,7 +45,7 @@ function update(req, res) {
     Tip.findById(req.params.id)
     .then(tip => {
       if (tip.owner.equals(req.user.profile._id)) {
-        req.body.helpful = !!req.body.helpful
+        req.body.educational = !!req.body.educational
         tip.update(req.body, {new: true})
         .then(tip => {
           console.log(tip)
@@ -75,10 +77,10 @@ function edit(req, res){
     })
 }
 
-function flipHelpful(req, res) {
+function flipEducational(req, res) {
     Tip.findById(req.params.id)
     .then(tip => {
-      tip.helpful = !tip.helpful
+      tip.educational = !tip.educational
       tip.save()
       .then(()=> {
         res.redirect(`/tips/${tip._id}`)
@@ -111,7 +113,7 @@ function create(req, res){
     console.log(req.body)
 
     req.body.owner = req.user.profile
-    req.body.helpful = !!req.body.helpful
+    req.body.educational = !!req.body.educational
     Tip.create(req.body)
     .then(tip => {
         res.redirect("/tips")
