@@ -1,24 +1,36 @@
-<div>
-    <% if (isSelf)  {%> 
-        <h2>Add a brand statement!</h2>
-        <form action="/profiles/<%= profile._id %>/brand" method="POST">
-          <label>
-            Name: 
-            <input type="text" name="name" autocomplete="off">
-          </label>
-          <label>
-            Brand Statement: 
-            <input type="text" name="summary" autocomplete="off">
-          </label>
-          <label>
-            Job: 
-            <input type="text" name="job" autocomplete="off">
-          </label>
-          <label>
-            Skills: 
-            <input type="text" name="skills" autocomplete="off">
-          </label>
-          <button type="submit">Add brand Statement</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    "Hello there, my name is brands"
+    <h2>Add a brand statement!</h2>
+        <form action="`/profiles/${req.user.profile._id}`" method="POST">
+            <label>
+                Name:
+                <input type="text" name="name">
+            </label>
+
+            <label>
+                Brand Statement:
+                <input type="text" name="brand">
+            </label>
+
+            <label>
+                Job:
+                <input type="text" name="job">
+            </label>
+
+            <label>
+                Skills:
+                <input type="text" name="skills">
+            </label>
+            <button type = "submit">Add my brand!</button>
         </form>
-      <% } %>
-</div>
+
+</body>
+</html>
