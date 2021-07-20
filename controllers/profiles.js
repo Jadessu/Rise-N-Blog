@@ -3,16 +3,16 @@ import { Profile } from "../models/profile.js"
 export{
     index,
     show,
-    createBrand,
+    createSkill,
 
 }
 
-function createBrand(req, res){
+function createSkill(req, res){
   console.log("this works")
   console.log(req.body)
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.brands.push(req.body)
+    profile.skills.push(req.body)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -25,11 +25,12 @@ function createBrand(req, res){
 }
 
 function show(req, res){
-    console.log("this works")
+    console.log(req.params.id)
     Profile.findById(req.params.id)
     .then(profile => {
       Profile.findById(req.user.profile._id)
       .then(self => {
+        console.log(profile, "profile")
         const isSelf = self._id.equals(profile._id)
         res.render("profiles/show", {
           title: `${profile.name}'s profile`,
