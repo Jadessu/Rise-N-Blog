@@ -1,5 +1,5 @@
 <div>
-    <h1>Tips</h1>
+    <!-- <h1>Tips</h1>
     <form action="/tips" method="POST">
     <label>
         Category:
@@ -14,5 +14,45 @@
         <input type="checkbox" name="helpful">
     </label>
     <button type="submit">Add Tip</button>
-</form>
-    </div>
+</form> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/newtip.css">
+    <title>Document</title>
+</head>
+<body>
+</div>
+
+<form action="/tips" method="POST">   
+    <input name="name" type="text" class="feedback-input" placeholder="Name" autocapitalize="off" />   
+
+    <input name="title" type="text" class="feedback-input " placeholder="Title" autocomplete="off" />
+
+    <textarea name="summary" class="feedback-input summary" placeholder="Summary" autocomplete="off"></textarea>
+
+    <textarea name="article" class="feedback-input article" placeholder="Article"></textarea>
+
+    <select name= "category" class="form-select" aria-label="Default select example">
+        <option selected>Please select a category</option>
+        <option value="Frontend Development">Frontend Development</option>
+        <option value="Backend Development">Backend Development</option>
+        <option value="UI/UX Design">UI/UX Design</option>
+        <option value="Job search">Job search</option>
+        <option value="General">General</option>
+      </select>
+
+    <label>
+        Is this article eductional?
+        <input type="checkbox" name="educational">
+    </label>
+
+    <input type="submit" value="Publish"/>
+  </form>
+</body>
+</html>
+
+   
