@@ -15,17 +15,16 @@
 <body>
     <header>
       <nav class="navbar">
-        <div class="logo"><a href="#">^UPLIFT^</a></div>
+        <div class="logo"><a href="#">Title</a></div>
         <ul class="menu">
           <li><a href="#">Home</a></li>
-          <li><a href="/tips">Tips</a></li>
-          <li><a href="/tips/new">Add a tip</a></li>
+          <li><a href="/tips">Blogs</a></li>
+          <li><a href="/tips/new">Create a Blog</a></li>
           <li><a href="/brands/new">Brand Statement</a></li>
-          <li><a href="/profiles">Users</a></li>
+          <li><a href="/profiles">Contributors</a></li>
           <li><a href="#"></a></li>
         </ul>
         <div class="buttons"> 
-         <input type="button" value="login">  
           <% if (user) { %>
             <a href="/auth/logout">Logout</a>
           <% } else { %>
