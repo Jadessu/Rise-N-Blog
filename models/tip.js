@@ -6,11 +6,11 @@ export{
 }
 
 const tipSchema = new Schema({
-    detail: {
+    article: {
         type: String,
         required: true,
     },
-    helpful:{
+    educational:{
         type: Boolean,
         
     },
@@ -19,7 +19,19 @@ const tipSchema = new Schema({
     },
     category: {
         type: String,
+        
+    },
+    name: {
+        type: String,
         required: true,
+    },
+    summary: {
+        type: String,
+        required: true,
+    },
+    title: {
+        type: String,
+        required: true
     }
 })
 
