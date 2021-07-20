@@ -2,10 +2,10 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 export{
-    Tip
+    Blog
 }
 
-const tipSchema = new Schema({
+const blogSchema = new Schema({
     article: {
         type: String,
         required: true,
@@ -35,4 +35,4 @@ const tipSchema = new Schema({
     }
 })
 
-const Tip = mongoose.model("Tip", tipSchema)
+const Blog = mongoose.model("Blog", blogSchema)

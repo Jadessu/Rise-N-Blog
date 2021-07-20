@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/newtip.css">
+    <link rel="stylesheet" href="/stylesheets/newblog.css">
 </head>
 <body>
-  <form action="/tips/<%= tip._id %>?_method=PUT" method="POST">
+  <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
     <input name="name" 
     type="text" 
     class="feedback-input" 
     placeholder="Name" 
     autocapitalize="off" 
-    value = "<%=tip.name %>""
+    value = "<%=blog.name %>""
     />   
   
     <input name="title" 
     type="text" 
     class="feedback-input" 
-     value= "<%=tip.title %>"
+     value= "<%=blog.title %>"
     />
   
     <textarea name="summary" 
@@ -28,18 +28,18 @@
     
     
      value = 
-  ><%=tip.summary %></textarea>
+  ><%=blog.summary %></textarea>
   
     <textarea name="article" 
     class="feedback-input article" 
     
     value = 
-    ><%=tip.article %></textarea>
+    ><%=blog.article %></textarea>
   
     
     <label id = "checkbox">
       Is this article educational?
-      <input type="checkbox" name="educational" <%= tip.educational ? "checked" : "" %>>
+      <input type="checkbox" name="educational" <%= blog.educational ? "checked" : "" %>>
     </label>
     
     <input type="submit" value="Edit"/>
