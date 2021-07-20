@@ -5,12 +5,9 @@ export {
 }
 
 
-const aboutSchema = new mongoose.Schema({
-  name: String,
-  summary: String,
-  job: String,
-  skills: String,
-
+const skillSchema = new mongoose.Schema({
+  skillname: String,
+  
 })
 
 
@@ -18,7 +15,7 @@ const aboutSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  about: [aboutSchema],
+  skills: [skillSchema],
   
 }, {
   timestamps: true
