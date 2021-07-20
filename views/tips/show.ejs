@@ -5,34 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/showtip.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <section>
-        <p>From the brilliant mind of <%= tip.owner.name %></p>
-        <h1><%= tip.detail %> </h1>
-  <h2>This tip is <%= tip.helpful ? 'Helpful!' : 'Not Helpful ' %></h2>
+    <main id="main">
+      <div class="header">
+        <h1 id="title"><%= tip.title %></h1>
+        <h2><u>January 20, 2021</u></h2>
+        <h2>From the brilliant mind of <%= tip.owner.name %></h2>
+      </div>
+      <div id="img-div">
+          <img src="https://cdn.thecoolist.com/wp-content/uploads/2016/05/Japanese-Cherry-beautiful-tree.jpg" alt="">
+        <figcaption id="img-caption">Image of a beautiful tree.</figcaption>
+      </div>
+      <div id="article">
+        
+        <p><%= tip.article %></p>
+      </div>
+      
+      <h2>This blog is <%= tip.educational ? 'Educational' : 'not educational ' %></h2>
+
+      <div id = "user-actions">
 	<% if (user) { %>
-    <form action="/tips/<%= tip._id %>/flip-helpful?_method=PUT" method="POST">
-        <button type="submit">
-            Make tip <%= tip.helpful ? 'not helpful' : 'helpful' %>
+    <form action="/tips/<%= tip._id %>/flip-educational?_method=PUT" method="POST">
+      <div>
+        <button type="submit" class="btn btn-outline-primary">
+            Make blog <%= tip.educational ? 'not educational' : 'educational' %>
           </button>
+        </div>
          </form> 
        <% } %>
 
        <% if (tip.owner.equals(user?.profile._id)){ %>
         <p>
-            <a href="/tips/<%= tip._id %>/edit"> Edit this tip!</a>
+          <div>
+           <button class="btn btn-outline-secondary"> <a id = "edit" href="/tips/<%= tip._id %>/edit"> Edit Blog</a> </button>
+          </div>
         </p>
 
         <p>
             <form action="/tips/<%= tip._id %>?_method=DELETE" method="POST">
-              <button type="submit">
-                Delete this tip
+              <div>
+              <button type="submit" class="btn btn-outline-danger">
+                Delete Blog
               </button>
+            </div>
             </form>
           </p>
      <%  } %>
-       
-    </section>
-</body>
+    </div>
+      
+      
+    </main>
+  </body>
 </html>
+
