@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="newAbout.css">
     <link rel="stylesheet" href="/stylesheets/portfolio.css">
 
 </head>
@@ -19,8 +19,47 @@
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eos pariatur, deserunt laborum voluptatem eligendi soluta voluptatum non ratione obcaecati consequuntur nobis. Quisquam architecto provident officiis id excepturi reprehenderit voluptates, nam autem soluta voluptatum molestiae libero quam quaerat! Odit, qui exercitationem accusantium optio sint numquam illum perspiciatis nisi expedita eaque.
         </p>
+            
+        
         <a href="#" class = "btn">Get In Touch</a>
     </div>
     
+    <% if (isSelf) { %>
+        <h2>Add a skill!</h2>
+
+        <form action="/profiles/<%= profile._id %>/skills" method="POST">
+            <label>
+                Skills:
+                <input type="text" name="skills">
+            </label>
+
+            <button type = "submit">Add a skill!</button>
+        </form>
+
+        <a href="/brands"><button> Add a brand statement</button></a>
+   <% } %>
+
+
+
+
+
+
+   <% if (profile.skills.length){ %>
+
+    <h2>
+        <%= isSelf ? "You have" : `${profile.name} has ` %> these skills:
+    </h2>
+    <% profile.skills.forEach(skill => { %>
+    
+        <h3> <%= skill.skillname %> </h3>
+        <% }) %>
+
+        <% }  else {%>
+            <h2>
+                <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any skills.
+            </h2>
+            <% } %>
+ 
+
 </body>
 </html>
