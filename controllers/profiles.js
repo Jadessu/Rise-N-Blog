@@ -4,7 +4,23 @@ export{
     index,
     show,
     createSkill,
+    deleteSkill
 
+}
+
+function deleteSkill(req, res){
+  Profile.findById(req.user.profile)
+  .then(profile => {
+    profile.skills.remove({_id: req.params.id})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
 }
 
 function createSkill(req, res){
