@@ -12,7 +12,8 @@ html{
 }
 
 body{
-    background-image: url("/images/background.jpg");
+    /* background-image: url("/images/background.jpg"); */
+    background-color: rgb(56, 9, 9);
     
     background-position: 0 1000px;
     font-family: 'Roboto', sans-serif;

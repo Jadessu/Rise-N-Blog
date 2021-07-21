@@ -38,22 +38,25 @@
     <textarea name="summary" class="feedback-input summary" placeholder="Summary" autocomplete="off"></textarea>
 
     <textarea name="article" class="feedback-input article" placeholder="Article"></textarea>
-
-    <select name= "category" class="form-select" aria-label="Default select example">
-        <option selected>Please select a category</option>
+    <div class = "category">
+        <div class = "box">
+    <select name= "category" class="form-select" id = "box" aria-label="Default select example">
+    
+        <option selected>Select a category</option>
         <option value="Frontend Development">Frontend Development</option>
         <option value="Backend Development">Backend Development</option>
         <option value="UI/UX Design">UI/UX Design</option>
         <option value="Job search">Job search</option>
         <option value="General">General</option>
       </select>
+    </div>
 
-    <label>
+    <label id = "educational">
         Is this article eductional?
         <input type="checkbox" name="educational">
     </label>
-
-    <input type="submit" value="Publish"/>
+</div>
+    <input id = "publish" type="submit" value="Publish"/>
   </form>
 </body>
 </html>

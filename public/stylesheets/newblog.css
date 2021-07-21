@@ -36,7 +36,7 @@
     width:100%;
     box-sizing: border-box;
     outline:0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.055);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -48,13 +48,54 @@
   } */
 
   .article{
-      height: 30%;
+      height: 40%;
   }
 
+
+  .category{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #educational{
+    color: whitesmoke;
+    background-color: #521207;
+    text-transform: uppercase;
+    background-color: ;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  }
   #checkbox{
-    color: grey;
+    color: rgb(243, 241, 241);
     margin: 15px;
   }
+
+.box select{
+    background-color: #521207;
+  color: white;
+  padding: 12px;
+  width: 220px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  }
+
+  
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
 
   .feedback-input:focus { border:2px solid #CC4949; }
   
@@ -67,7 +108,7 @@
   [type="submit"] {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     width: 100%;
-    background:#CC6666;
+    background-color: #521207;
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -78,5 +119,6 @@
     transition: all 0.3s;
     margin-top: 10px;
     font-weight:700;
+    
   }
   [type="submit"]:hover { background:#CC4949; }

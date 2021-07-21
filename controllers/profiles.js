@@ -4,8 +4,34 @@ export{
     index,
     show,
     createSkill,
-    deleteSkill
+    deleteSkill,
+    createBrand,
+    newBrand,
 
+}
+
+function createBrand(req, res) {
+  Profile.findById(req.user.profile._id)
+  req.body.owner = req.user.profile
+  .then(profile => {
+   Brand.create(req.body)
+    profile.save()
+    .then (() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile}`)
+  })
+}
+
+function newBrand(req, res){
+  console.log("this better work, I am tired")
+  res.render("brands/new",{
+    Profile,
+    User
+  })
 }
 
 function deleteSkill(req, res){
