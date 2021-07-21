@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/portfolio.css">
 
 </head>
 <body>
     <div class="container">
-        <h1><%= user.profile.name %></h1>
+        <h1 class = "username"><%= user.profile.name %></h1>
         <h2>Software Developer</h2>
         <div class="image">
-            <img src="<%= user.profile.avatar %>" alt="<%= profile.name %>'s' photograph">
+            <img class = "profile" src="<%= user.profile.avatar %>" alt="<%= profile.name %>'s' photograph">
         </div>
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eos pariatur, deserunt laborum voluptatem eligendi soluta voluptatum non ratione obcaecati consequuntur nobis. Quisquam architecto provident officiis id excepturi reprehenderit voluptates, nam autem soluta voluptatum molestiae libero quam quaerat! Odit, qui exercitationem accusantium optio sint numquam illum perspiciatis nisi expedita eaque.
@@ -24,34 +30,20 @@
         <a href="#" class = "btn">Get In Touch</a>
     </div>
     
-    <% if (isSelf) { %>
-        <h2>Add a skill!</h2>
+    
 
-        <form action="/profiles/<%= profile._id %>/skills" method="POST">
-            <label>
-                Skills:
-                <input type="text" name="skills">
-            </label>
+<!-- Skill display -->
 
-            <button type = "submit">Add a skill!</button>
-        </form>
-
-        <a href="/brands"><button> Add a brand statement</button></a>
-   <% } %>
-
-
-
-
-
+<div class = "skills">
 
    <% if (profile.skills.length){ %>
-
-    <h2>
-        <%= isSelf ? "You have" : `${profile.name} has ` %> these skills:
+ <h2>
+        <%= isSelf ? "YOUR " : `${profile.name}` %>SKILLS
     </h2>
     <% profile.skills.forEach(skill => { %>
-    
-        <h3> <%= skill.skillname %> </h3>
+        <ul>
+            <li> <%= skill.skillname %></li>
+        </ul>
         <% }) %>
 
         <% }  else {%>
@@ -59,7 +51,26 @@
                 <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any skills.
             </h2>
             <% } %>
- 
+        </div>
 
+        <!-- Add skill and brand statement -->
+        
+        <div class = "addskill">
+            <% if (isSelf) { %>
+                <h2>Add a skill!</h2>
+        
+                <form action="/profiles/<%= profile._id %>/skills" method="POST">
+                    <label>
+                        
+                        <input type="text" name="skillname" placeholder="skill" class = "button">
+                    </label>
+        
+                    <button type = "submit" class = "button">Add a skill!</button>
+                </form>
+        
+                <a class = "brandbutton" href="/brands"> Add a brand statement</a>
+           <% } %>
+        
+        </div>
 </body>
 </html>

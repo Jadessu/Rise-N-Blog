@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
     transition: all 0.3s ease;
 }
 body{
@@ -19,6 +19,7 @@ background: linear-gradient(to right, #1F1C18, #8E0E00);
   background-attachment: fixed;
   background-size: cover;
   color: white; 
+
 } 
 
 ::selection{

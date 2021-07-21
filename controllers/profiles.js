@@ -27,6 +27,7 @@ function createSkill(req, res){
 function show(req, res){
     console.log(req.params.id)
     Profile.findById(req.params.id)
+    .populate("skills")
     .then(profile => {
       Profile.findById(req.user.profile._id)
       .then(self => {

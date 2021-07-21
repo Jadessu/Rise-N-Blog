@@ -1,0 +1,170 @@
+
+
+html{
+    /* background-image: url("/images/background3.jpg"); */
+    background-color: rgb(136, 15, 15);
+   
+  }
+  
+
+  nav{
+      display: flex;
+      justify-content: space-evenly;
+      text-transform: uppercase;
+   
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+  }
+
+  a:hover{
+      background: rgb(65, 10, 10);
+      transform: scale(1.2);
+  }
+  body{
+    
+    font-family: Rockwell, Georgia, serif;
+      max-width: 1000px;
+    width:90%;
+    margin: 0 auto;
+    background: rgba( 172, 56, 56, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 9.0px );
+-webkit-backdrop-filter: blur( 9.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-family: 'Roboto', sans-serif;
+
+
+    
+
+  }
+
+ 
+  
+  h1{
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    padding:6px;
+    background: #8E0E00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  .column{
+    width:50%;
+    float:left;
+    padding:2%;
+    
+  }
+  .column{
+    padding:3%;
+  }
+  /*clear-fix the parent of column because it collapsed!  */
+  form:after{
+    content:'';
+    display:block;
+    clear:both;
+  }
+
+  #brandstatement{
+      color: rgb(230, 224, 224);
+      line-height: 1.6rem;
+  }
+  
+  /* FORM STUFF BEGINS HERE */
+  form{
+    font-size:110%
+  }
+  label{
+    display:block;
+    color:rgb(221, 199, 184);
+    margin:16px 0 3px;
+  }
+  
+  input[type=text],
+  input[type=job],
+  input[type=tel],
+  textarea,
+  select{
+    width:100%;
+    padding:5px;
+    box-sizing:border-box;
+    background-color:cornsilk;
+    border: solid 1px tan;
+    font-family:'Lucida Console', monospace;
+  }
+  textarea{
+    resize: vertical;
+    min-height: 280px;
+  }
+
+  li{
+      list-style: none;
+  }
+
+  li:before{
+      content: "\270D";
+      margin-right: 20px;
+  }
+  
+  .button{
+    display: inline-block;
+    font-size: 1.2rem;
+    background: #4d0f0f;
+    text-decoration: none;
+    color: #d2e4d7;
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin-left: 43%;
+}
+
+.button:hover{
+    background-color: rgb(75, 6, 6);
+    color: white;
+    transform: scale(1.3);
+}
+  
+  
+  
+  
+  /* hovers and tabs */
+  input:hover,
+  textarea:hover
+  
+  {
+    outline: 2px solid tan;
+  }
+  
+  /* responsive bonus round */
+  @media screen and (min-width:450px){
+  /*  2col  */
+    .column{
+      width:50%;
+      float:left;
+      padding:3%;
+      box-sizing:border-box;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
