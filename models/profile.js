@@ -25,7 +25,7 @@ const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
   skills: [skillSchema],
-  brand: [brandSchema],
+  brands: brandSchema,
   
 }, {
   timestamps: true

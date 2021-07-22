@@ -11,12 +11,11 @@ export{
 }
 
 function createBrand(req, res) {
+  console.log(req.user)
   Profile.findById(req.user.profile._id)
-  req.body.owner = req.user.profile
   .then(profile => {
-   Brand.create(req.body)
-    profile.save()
-    .then (() => {
+   profile.brands = req.body
+    profile.save(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
   })
@@ -24,6 +23,10 @@ function createBrand(req, res) {
     console.log(err)
     res.redirect(`/profiles/${req.user.profile}`)
   })
+
+  console.log(req.body)
+  
+
 }
 
 function newBrand(req, res){

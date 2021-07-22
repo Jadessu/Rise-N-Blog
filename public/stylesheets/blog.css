@@ -141,6 +141,9 @@ font-family: 'Roboto', sans-serif;
 
   }
   
+  #name{
+    text-transform: capitalize;
+  }
   /* The typing effect */
 @keyframes typing {
   from { width: 0 }

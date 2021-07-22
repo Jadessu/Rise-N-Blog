@@ -15,13 +15,26 @@
 <body>
     <main id="main">
       <div class="header">
-        <h1 id="title"><%= blog.title %></h1>
-        <h2><u>January 20, 2021</u></h2>
-        <h2>From the brilliant mind of <%= blog.owner.name %></h2>
+        <h1 id="title"> <span class = "capitalize"><%= blog.title %></span></h1>
+        <h2><u> <%= blog.createdAt %></u></h2>
+        <h2>From the brilliant mind of <span class = "capitalize"><%= blog.owner.name %> </span></h2>
       </div>
       <div id="img-div">
-          <img src="https://cdn.thecoolist.com/wp-content/uploads/2016/05/Japanese-Cherry-beautiful-tree.jpg" alt="">
-        <figcaption id="img-caption">Image of a beautiful tree.</figcaption>
+        <% if (  blog.category  === "Frontend Development"){ %>
+          <img src="/images/frontend.jpg" alt="frontend development image">
+        
+        <% } else if (  blog.category  === "Backend Development") { %>
+          <img src="/images/backend.jpg" alt="backend development image">
+        
+        <% } else if ( blog.category  === "UI/UX Design") { %>
+          <img src="/images/design.jpg" alt="ui/ux design">
+          
+        <% } else if ( blog.category  === "Job search"){ %>
+          <img src="/images/jobsearch.jpg" alt="job search image">
+        <% } else { %>
+          <img src="/images/general.jpg" alt="an image about life">
+        <% } %>
+        <figcaption id="img-caption"><%= blog.category %></figcaption>
       </div>
       <div id="article">
         

@@ -13,10 +13,25 @@
 <body>
   <% if (blogs.length) { %>
   <% blogs.forEach(blog => { %>
-    <h1> The category is <%= blog.category %> </h1>
+    
     <div class = "blog-post">
         <div class = "blog-post-img">
-          <img src="https://cdn.thecoolist.com/wp-content/uploads/2016/05/Japanese-Cherry-beautiful-tree.jpg" alt="">
+          <% if (  blog.category  === "Frontend Development"){ %>
+            <img src="/images/frontend.jpg" alt="frontend development image">
+          
+          <% } else if (  blog.category  === "Backend Development") { %>
+            <img src="/images/backend.jpg" alt="backend development image">
+          
+          <% } else if ( blog.category  === "UI/UX Design") { %>
+            <img src="/images/design.jpg" alt="ui/ux design">
+            
+          <% } else if ( blog.category  === "Job search"){ %>
+            <img src="/images/jobsearch.jpg" alt="job search image">
+          <% } else { %>
+            <img src="/images/general.jpg" alt="an image about life">
+          <% } %>
+          
+          
         </div>
         <div class = "blog-post-info">
           <div class = "blog-post-title">
@@ -24,9 +39,11 @@
           </div>
           
           <div class = "blog-post-date">
-            <span>Friday</span>
-            <span>July 16, 2021 </span>
-            <h4>By <%= blog.name %></h1>
+           
+            <span>
+              
+              <%= blog.createdAt %> </span>
+            <h4 id = "name">By <%= blog.name %></h1>
           </div>
           <div class = "blog-post-summary">
             <p> <%= blog.summary %> </p>

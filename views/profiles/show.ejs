@@ -17,16 +17,38 @@
 </head>
 <body>
     <div class="container">
-        <h1 class = "username"><%= user.profile.name %></h1>
-        <h2>Software Developer</h2>
+        <h1 class = "username">
+            <% if (profile.brands) { %>
+                <%= profile.brands.name %>
+                <% } else {%>
+
+            <%= profile.name %>
+            <% } %>
+        </h1>
+        <h2>
+            <% if (profile.brands) { %>
+                <%= profile.brands.job %>
+                <% } else {%>
+
+            Software Engineer
+            <% } %>
+
+        </h2>
         <div class="image">
-            <img class = "profile" src="<%= user.profile.avatar %>" alt="<%= profile.name %>'s' photograph">
+            <img class = "profile" src="<%= profile.avatar %>" alt="<%= profile.name %>'s' photograph">
         </div>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eos pariatur, deserunt laborum voluptatem eligendi soluta voluptatum non ratione obcaecati consequuntur nobis. Quisquam architecto provident officiis id excepturi reprehenderit voluptates, nam autem soluta voluptatum molestiae libero quam quaerat! Odit, qui exercitationem accusantium optio sint numquam illum perspiciatis nisi expedita eaque.
-        </p>
-            
         
+        <% if (profile.brands) { %>
+            
+        <p> <%= profile.brands.brandstatement %> </p>
+        <% } else {%>
+                        <p><span id = "name"><%= `${profile.name}`%> </span>  did not create a brand statement like Jen told them to. Either that or they just didn't check out my site at all. I am not sure which is worse. With that in mind, here is one I wrote for them: <br>
+                            <p> <span id = "name"><%= `${profile.name}`%> </span> is a software engineer with skills in both the front-end and back-end of web applications. Their experience has provided them with the innovative and technical skills neccessary to successfuly provide any company with multifaced technical solutions across a wide range of software platforms. There is no one better than <span id = "name"><%= `${profile.name}`%> </span> to work, learn, and grow with when it comes to software engineering. <br>
+                                - From a fellow engineer that sees their potential.
+                            </p>
+                         </p>
+
+            <% } %>
         <a href="#" class = "btn">Get In Touch</a>
     </div>
     
@@ -43,13 +65,18 @@
     </h2>
     <% profile.skills.forEach(skill => { %>
         <ul>
+
+           
             <li> <%= skill.skillname %></li>
             <form action="/profiles/skills/<%= skill._id %>?_method=DELETE"
                 method="POST"
                 
                 >
+                <% if (isSelf) { %>
                 <button type ="submit" class="btn btn-light" id = "delete"> DELETE</button>
+                <% } %>
             </form>
+            
         </ul>
        
         <% }) %>
@@ -75,10 +102,35 @@
         
                     <button type = "submit" class = "button">Add a skill!</button>
                 </form>
-        
-                <a class = "brandbutton" href="/brands"> Add a brand statement</a>
            <% } %>
-        
         </div>
+
+        <% if (isSelf) { %>
+            <div class = "brandstatement">
+            <h2>Add a brand statement!</h2>
+
+            <form action="/profiles/<%= profile._id %>/brands" method="POST">
+            
+  
+                <div class="column">
+                  <label>Your Name</label>
+                  <input type="text" id="your_name" name="name"/>
+                  
+                  <label>Your Specialty</label>
+                  <input type="job" id="your_job" name="job" />
+                  
+                  <label>Brand Statement</label>
+                  <textarea id="brand" name="brandstatement" ></textarea>
+                  
+              </div>
+                 
+            
+                <button class = "button" type = "submit">ADD MY BRAND</button>
+              
+              </form>
+              
+
+        <% } %>
+    </div>
 </body>
 </html>
