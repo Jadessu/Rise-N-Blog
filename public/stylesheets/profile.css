@@ -31,6 +31,7 @@ border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
   height: 60px;
   justify-content: center;
+  align-items: center;
   
 }
 
@@ -41,11 +42,17 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   height: 60px; 
   line-height: 60px; 
   padding: 0 40px; 
+  align-items: center;
 }
 
 
 .nav li:hover {
-  background: rgb(41, 2, 2);
+  background: rgba(36, 1, 1, 0.671);
+box-shadow: 0 8px 32px 0 rgba(60, 135, 31, 0.192);
+backdrop-filter: blur( 10.0px );
+-webkit-backdrop-filter: blur( 10.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
   transition: background .3s;
   color: white;
 }

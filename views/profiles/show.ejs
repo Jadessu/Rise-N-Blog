@@ -92,7 +92,7 @@
         
         <div class = "addskill">
             <% if (isSelf) { %>
-                <h2>Add a skill!</h2>
+                <h2>ADD A SKILL!</h2>
         
                 <form action="/profiles/<%= profile._id %>/skills" method="POST">
                     <label>
@@ -105,25 +105,46 @@
            <% } %>
         </div>
 
+        <hr>
+        <!-- BRAND STATEMENT -->
         <% if (isSelf) { %>
             <div class = "brandstatement">
-            <h2>Add a brand statement!</h2>
+            <h2>ADD A BRAND STATEMENT!</h2>
 
             <form action="/profiles/<%= profile._id %>/brands" method="POST">
             
   
-                <div class="column">
+                <div class="column" id = "formcolumn">
                   <label>Your Name</label>
-                  <input type="text" id="your_name" name="name"/>
+                  <input type="text" id="your_name" name="name" placeholder="Your preferred name"/>
                   
                   <label>Your Specialty</label>
-                  <input type="job" id="your_job" name="job" />
+                  <input type="job" id="your_job" name="job" placeholder="Web Developer, Front-end Engineer, Backend Engineer, etc.." />
                   
                   <label>Brand Statement</label>
-                  <textarea id="brand" name="brandstatement" ></textarea>
+                  <textarea id="brand" name="brandstatement" placeholder="Look to the right for guidance"></textarea>
                   
               </div>
                
+              <div class = "column">
+
+                <h1>What is a brand statement?</h1>
+                <p>Personal brand statements synthesize your personal brand in one to three sentences for your audience. When someone reads your personal brand statement they should understand who you are, professionally speaking, what you do, and the value that you offer. 
+                </p>
+                <div id = "questions">
+                        <h2>Consider these questions:</h2>
+                    <h3>What do you do?</h3>
+                    <h3>What problem do you solve?</h3>
+                    <h3> What are your passions and motivators?</h3>
+                    <h3>What value can you offer?</h3>
+                            <h4>&#169 2018 General Assembly
+                            </h4>
+                </div>
+                   
+                   
+               
+
+              </div>
             
                 <button class = "button" type = "submit">ADD MY BRAND</button>
               
