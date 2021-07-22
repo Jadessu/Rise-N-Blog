@@ -13,11 +13,13 @@
 body {
   margin: 2rem;
   color: whitesmoke;
-  background: #8E0E00;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
-  /* background: linear-gradient(to right, #1F1C18, #8E0E00); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
   margin: 0;
   padding: 0;
+  background: #8E0E00;  
+background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
+background: linear-gradient(to right, #1F1C18, #8E0E00); 
+
 
 }
 

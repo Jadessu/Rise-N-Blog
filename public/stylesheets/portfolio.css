@@ -11,6 +11,29 @@ html{
     font-size: 10px;
 }
 
+nav{
+    /* display: flex;
+    flex-direction: column; */
+    margin-left: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 2rem;
+    
+  }
+
+  #logo, i{
+    color: yellow;
+
+  }
+
+  #logo{
+    text-decoration: none;
+  }
+  .logo a{
+    text-decoration: none;
+    font-size: 2rem;
+  }
+
 body{
     /* background-image: url("/images/background.jpg"); */
     background-color: rgb(56, 9, 9);
@@ -315,15 +338,17 @@ background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, F
 
   .brandstatement .button{
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 2rem;
     background: #4d0f0f;
     text-decoration: none;
     color: #d2e4d7;
-    border-radius: 8px;
+    border-radius: 3px;
     justify-content: center;
     display: flex;
     text-align: center;
     margin-left: 43%;
+    margin-bottom: 20px;
+    padding: 0 50px;
 }
 
 .brandstatement .button:hover{

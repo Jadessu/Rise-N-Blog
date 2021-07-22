@@ -103,6 +103,16 @@ header .navbar{
   transform: scale(0.97);
 }
 
+#logout{
+  color: white;
+  text-decoration: none;
+}
+
+
+#logout:hover{
+  color: yellow;
+  transform: scale(1.6);
+}
 
  header .text-content{
    width: 40%;
