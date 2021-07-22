@@ -24,6 +24,10 @@ background: linear-gradient(to right, #1F1C18, #8E0E00);  */
 
 } 
 
+
+
+
+
 ::selection{
   color: #f2f2f2;
   background: #f86d8d;

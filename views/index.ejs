@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheets/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
+<link rel="stylesheet" href="/stylesheets/index.css">
+
 
     <title>Rise and Blog</title>
 </head>
@@ -32,9 +38,9 @@
             <a href="/auth/logout" id = "logout">LOGOUT <i class="fas fa-sign-out-alt"></i></a>
           <% } else { %>
             <a href="/auth/google" class="siwg-link">
-              <button type="submit" class="siwg">
-                <img id="siwg-image" alt="Sign in with Google" />
-              </button>
+               <button type="submit" class="siwg">
+                  <img id="siwg-image" alt="Sign in with Google" />
+                </button>
             </a>
           <% } %>
          </div>
@@ -42,7 +48,7 @@
         <div class="text-content">
           <h2 id = "name">Welcome,<br><%= user ? user.profile.name : "engineer" %></h2> <br>
           <p>Here is your daily quote for today: </p>
-          <p>“Blogging is a great way to show your talents and interests to prospective employers, while adding an edge to your resume. If you blog consistently it shows your dedication, passions and creativity – all of which are key attributes employers look for in job candidates. ” <br>
+          <p>"Blogging is a great way to show your talents and interests to prospective employers, while adding an edge to your resume. If you blog consistently it shows your dedication, passions and creativity – all of which are key attributes employers look for in job candidates. ” <br>
             —Lauren Conrad.</p>
         </div>
       </header>
