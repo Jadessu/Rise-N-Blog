@@ -9,8 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
+    
 </head>
+<nav>
+  <div class="nav">
+    <ul>
+      <li><a href="/" class="nav-link">HOME</a></li>
+      <li><a href="/blogs/new" class="nav-link">CREATE A BLOG</a></li>
+      <li><a href="/profiles" class="nav-link">CONTRIBUTORS</a></li>
+      
+    </ul>
+  </div>
+    
+</nav>
+
 <body>
+ 
+  <main>
   <% if (blogs.length) { %>
   <% blogs.forEach(blog => { %>
     
@@ -42,7 +57,7 @@
            
             <span>
               
-              <%= blog.createdAt %> </span>
+              <%= blog.createdAt.toString() %> </span>
             <h4 id = "name">By <%= blog.name %></h1>
           </div>
           <div class = "blog-post-summary">
@@ -63,6 +78,7 @@
            <a  id = "bloglink" href="/blogs/new"> Create a Blog</a>
           </div>
         <% } %> 
+      </main>
 </body>
 </html> 
 

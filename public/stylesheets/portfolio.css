@@ -191,10 +191,16 @@ li:before{
 
 /* BRAND STATEMENT */
 
+.brandstatement{
+    justify-content: center;
+    align-items: center;
+}
+
  .brandstatement a{
     text-decoration: none;
     color: white;
     cursor: pointer;
+    
 
   }
 

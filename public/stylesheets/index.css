@@ -10,9 +10,11 @@ body{
   height: 100vh;;
   width: 100%;
   display: flex;
-  background: #8E0E00; 
+  /* background: #8E0E00; 
 background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
-background: linear-gradient(to right, #1F1C18, #8E0E00); 
+background: linear-gradient(to right, #1F1C18, #8E0E00);  */
+  background-image: url("/images/lastone3.jpg"); 
+
 
  background-position: center center;
   background-repeat: no-repeat;
@@ -29,17 +31,17 @@ background: linear-gradient(to right, #1F1C18, #8E0E00);
 
 
 header{
-  /* height: 85vh;
-  width: 90%; */
+  height: 85vh;
+  width: 90%;
   background: rgba(255, 255, 255, 0.1);
-  /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   z-index: 12;
   border-radius: 25px;
   margin: auto;
-  position: relative; */
+  position: relative;
 }
 header .navbar{
   margin: auto;
@@ -53,6 +55,16 @@ header .navbar{
 .navbar .menu{
   display: flex;
   flex-wrap: wrap;
+}
+
+#logo{
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.7rem;
+}
+
+.logo i{
+ width: 30px;
+ padding-bottom: 10px;
 }
 .navbar .logo a{
   text-decoration: none;
@@ -112,6 +124,21 @@ header .navbar{
   text-transform: capitalize;
 }
 
+/* #bloglink{
+  
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+} */
 
 @media (max-width:850px) {
   header .navbar{

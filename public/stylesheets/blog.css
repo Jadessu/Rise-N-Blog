@@ -1,10 +1,60 @@
-body{
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+main{
     background: #8E0E00;  
 background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); 
 background: linear-gradient(to right, #1F1C18, #8E0E00); 
 font-family: 'Roboto', sans-serif;
+display: flex;
+flex-direction: column-reverse;
+padding-top: 100px
+
 
   }
+
+  .nav {
+    background: rgb(44, 3, 3);
+  
+    height: 60px; /* set same as height & line-height below */
+   
+    box-shadow: 0 8px 32px 0 rgba(158, 161, 204, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+ 
+    
+    
+  }
+
+  .nav ul{
+    margin-left: 380px;
+  }
+  
+  
+  .nav li {
+    display: inline-block;
+    list-style: none;
+    height: 60px; /* should be the same as line-height */
+    line-height: 60px; /* should be the same as height */
+    padding: 0 115px; 
+  }
+  
+  /* :hover allows you change the background color of the nav items when you mouse over them. Play around with the transition value to change the speed of the hover transition. */
+  .nav li:hover {
+    background: red;
+    transition: background .3s;
+  }
+  
+  /* This rule is applied to the link <a> tag. It lets you turn off the link underline and set the link text color. */
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
 
   
   
@@ -12,6 +62,7 @@ font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: row;
     margin: 10rem;
+    margin-top: -2rem;
     justify-content: center;
     align-items: center;
     
@@ -40,19 +91,27 @@ font-family: 'Roboto', sans-serif;
   .blog-post-info{
     flex: 2;
     padding: 2rem;
+   
   }
   
   .blog-post-title h2{
     color: #c3b2e0;
     text-transform: uppercase;
+    margin-bottom: 4px;
   }
 
   .blog-post-date{
       color: rgb(186, 174, 255);
+      margin-bottom: 2px;
   }
 
   .blog-post-summary{
       color: white;
+      margin-top: 20px
+  }
+
+  .blog-post-read-more{
+    padding-top: 15px
   }
   
   .blog-post-read-more a{
@@ -63,7 +122,8 @@ font-family: 'Roboto', sans-serif;
     background-color: #fff;
     border: 1px solid #673AB7;
     color: #673AB7;
-    box-shadow: 0 0.05rem 0.1em rgba(0, 0, 0, 0.25)
+    box-shadow: 0 0.05rem 0.1em rgba(0, 0, 0, 0.25);
+    text-decoration: none;
   }
   
   .blog-post-read-more a:hover{
