@@ -60,17 +60,17 @@
         <a href="#" class = "btn">Get In Touch</a>
     </div>
     
-    
+    <hr>
 
 <!-- Skill display -->
-
+<h2 id = "yourskills">
+    <%= isSelf ? "Your " : `${profile.name}'s` %> 
+    Skills
+</h2>
 <div class = "skills">
 
    <% if (profile.skills.length){ %>
- <h2>
-        <%= isSelf ? "YOUR " : `${profile.name}` %> <br>
-        SKILLS
-    </h2>
+ 
     <% profile.skills.forEach(skill => { %>
         <ul>
 
@@ -157,6 +157,8 @@
                 <button class = "button" id = "brandbutton" type = "submit">ADD MY BRAND</button>
               
               </form>
+
+              <h2 id = "editbrand">To edit your brand statement, please submit the edited version into the form above just as if you were creating a new one.</h3>
               
 
         <% } %>
