@@ -96,13 +96,13 @@ The contributors page is where you can view a profile of anyone that has ever lo
 
 
  # WIREFRAME
-
+### LANDING PAGE
 ![](public/images/wireframe1.png)
-![](public/images/wireframe2.png)
-![](public/images/wireframe6.png)
-![](public/images/wireframe2.png)
+### BLOG SECTION
+![](public/images/blogsection.png)
+### PROFILE SECTION
 ![](public/images/profilesection.png)
-# ERD
+### ERD
 ![](public/images/trello.png)
 
 
