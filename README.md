@@ -123,8 +123,8 @@ The contributors page is where you can view a profile of anyone that has ever lo
 ![](public/images/screen2.png)
 ![](public/images/screen3.png)
 ![](public/images/screen4.png)
-![](public/images/screen5.png)
-![](public/images/screen6.png)
+![](public/images/screen5.png) ![](public/images/screen6.png)
+
 
 
 
