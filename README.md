@@ -137,6 +137,7 @@ The contributors page is where you can view a profile of anyone that has ever lo
 - [ ] Add a functionality to like and comment on blogs
 - [ ] Finish the reach out functionality to send an email to the profile that is being viewed.
 - [ ] Add a format to the blogs where you can seperate them into paragraphs, highlight important text, choose your own font, etc..
+- [ ] Add more sections to the user's profile including education and portfolio.
 
 
 
