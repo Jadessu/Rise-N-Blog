@@ -57,7 +57,7 @@
            
             <span>
               
-              <%= blog.createdAt.toString() %> </span>
+              <%= blog.createdAt.toString().slice(0, 16) %> </span>
             <h4 id = "name">By <%= blog.name %></h1>
           </div>
           <div class = "blog-post-summary">

@@ -2,15 +2,16 @@
 ## A blog website
 
 
-![](Images/logowf.jpg)
+![](public/images/logo.png)
 
-[SYTYCC WEBSITE](https://sytycc.netlify.app/)
+[Rise'N'Blog WEBSITE](https://risenblog.herokuapp.com/)
 
 Rise'N'Blog is an online blog website that allow users to view and create blogs. Sections included in this website:
 
 - VIEW BLOGS
 - CREATE BLOGS
 - VIEW USER PROFILES
+- CREATE A PROFILE
 
 
 ## Features
@@ -53,107 +54,87 @@ Rise'N'Blog is an online blog website that allow users to view and create blogs.
 
 1.
  ## Home-Page <br>
-Upon loading the page, the user will be presented with the homepage, which includes the _title_, _navigation-bar_, and _logo_
+Upon loading the page, the user will be presented with the homepage, which includes a greeting with their name(if they are logged in), a motivational quote, the _logo_, _blogs_, _create a blog_ and _profiles_.
     
->The user can either use the navigation bar to access the contents of the page or scroll to each section. These sections include the Quiz and Study session
+>The user can acess the blogs created by other blogs and view the content of these blogs without needing to login
 2. 
-## The Quiz Section <br>
-On the quiz page, the user will have access to 4 different categories of quiz. These categories will include _Html_, _Css_, _Flebox & grid_, and _Javascript_ on the left side of the screen.
+## Blogs <br>
+On the blog page, a guess will have access to all the blogs to be viewed. The blog page will feature many blogs with their title, owner name, and summary
+> If the user is viewing their own blogs, they get the ability to edit, update, or delete it upon clicking the view blog button. The full article of the particular blog is available to be viewed only after opening the blog, which will redirect the user to a view page.
 
-On hover, the user will receive the quiz direction on the left side of the screen. This direction will read as follow:
+>If there are no blogs yet, there will be a page to notified you of such and provide you with a link to create a blog, only after you have logged in.
 
- >                           Quiz Name
-  >  This quiz contains 10 questions and there is no time limit. A minimum socre of 70% is required to win the game. Click to start!
 
-_The user will also be presented with a button that reads "**I am not ready**" Upon clicking this button, the user will be redirected to the study session, which will open on a new page._
 
-### If the user select a topic to be quizzed on, the user will be directed to the quiz section of that category.
-
-- On the quiz page, the user will be presented with a navigation bar that includes the _home_ and all the other _quiz categories_
-        
->  Clicking any of the quiz categories will result in the user switching over to that quiz. Clicking the home menu will redirect the user to the landing page.
-
-- The quiz section includes a tracker at the top to track the question the user is on. This will be out of 10 questions. This will be followed by the actual question and 4 different options for the user to choose from and a next button to go to the next question. A timer will also be present at the top of the quiz box to track the duration of the quiz.
-
-> If the user selects the correct option, the box of that option will change to a color of green and a message at the bottom that reads "You know your stuff!"
-
->Otherwise, if the user selects the incorrect option, the box of that option will change to a color of red, the correct answer will also appear with a color of green and a message at the bottom that reads "You will get it next time!"
-
-- At the end of the quiz(10 questions), the user will receive a new box that pops up as an evaluation box. This box will report the user's score, a pass or fail response, the duration of the quiz, and a button to try again. An example of this will read as follow:
-
->                      Your Evaluation
- >You got 4 out of 10 answers correct. That is 40%.
->You failed. A minimum score of 70% is required to win the game.
- >It took you 8 minutes and 38 seconds to complete the quiz.
-
-_There is also a toggle button at the top of the page that will switch the style to a dark or light mode_
 
 
 3.
 
- ## Study section <br>
-The study page includes 4 categories. These categories are the same as the categories for the quiz. The user will see a message at the top that reads:
+ ## Create a blog <br>
+The create a blog section is where a user will create and publish a blog to the all blogs section of the website:
     
->Choose a topic to study
+>The create blog forms will ask for the user's name, a title for the individual blog, a short summary of what the article is about, and the actual blog.
 
-- The user will be presented with the 4 label boxes and a button of get started. Upon clicking that button, the user will be redirected to the study section of that category. <br>
-    - The page includes a navbar and a question and answer drop box in the form of an accordion. Clicking on a question will open a drop down box that includes an explanation of the answer. This box will go away as soon as the user clicks on another question. <br>
+- The user will be presented with an option box that features many categories from frontend development, backend development, to UX/UI desgin. The image that represents the blog post is dependant on the category that the user selects. <br>
+    - There is also a checkbox at the bottom of the page for the user to select and notify the users whether their specific blog is educational or not. <br>
 
-At the bottom of the page, there is a text that reads:
-    
-> Don't like the background color? Click here to change it.
-- Upon clicking that text, the user will be faced with a prompt box that asks for a color. If the user enters a color, the background of the page will change to that color. The user can also enter an RGB number or Hex Colors.
+4.
+## Contributors <br>
+The contributors page is where you can view a profile of anyone that has ever logged into the app. This profile will feature an avatar of the user, their name, and a link that will redirect you to that user's specific page.
+> As a guess, you are able to view all the users that has log in into the app but you do not have access to learn about that user until you sign in.
+
+
+> As user, you have access to the user's information, which features their name, their job, their brand statement along with their skills and a button to get in touch with such user.
+
+> If the user has not written a brand statement yet, there is one that is already written for them and will be displayed.
+
+
+> As the user of the profile you are viewing, you have access to everything other users have and more. You can add in any skills you want and you can delete skills. You also have the ability to add and edit your brand statement. 
+
+>There is a section at the bottom of the page that explains what a brand statement is and how to write one.
             
 
 
  # WIREFRAME
 
-![](Images/wireframe.jpg)
-<!-- ![](Images/homewf.jpg)
-![](Images/quizsectionwf.jpg)
-![](Images/studysectionwf.jpg)
-![](Images/studywf.jpg)
-![](Images/quizwf.jpg) -->
+![](public/images/wireframe1.png)
+![](public/images/wireframe2.png)
+![](public/images/wireframe6.png)
+![](public/images/wireframe2.png)
+![](public/images/wireframe3.png)
+![](public/images/wireframe4.png)
+![](public/images/trello.png)
+
 
 # SPECIAL THANKS
-- First and foremost, to all my instrcutors and peers from GA SEIR-EC-6-7. My peers design ideas from our prior tic tac toe project were great inspirations to use on this project.
+- First and foremost, to all my instrcutors and peers from GA SEIR-EC-6-7. Everyone helped me one way or the other with this project and I am eternally grateful to all of them. Special shoutout to [Sam](https://www.linkedin.com/in/samuel-gemberling/) for helping me with most of the debugging issues I encountered.
 
-- [BreanD](https://twitter.com/bwdds?lang=en) - Reached out to him to inccorporate a similar design he used for a website and he was more than happy to help. He even offered to help me include REACT.
+- [albertwalicki](https://www.albertwalicki.com/glassmorphism-how-to-create) - This website's guide on how to design a glassmorphism website was my main inspiration for the look I decided to implement on the website.
 
 - The Engineering Channel - All of my problems that couldn't be resolved with stackoverflow were easily resolved throught the engineering channel.
 
-- [Netflix](www.netflix.com) - Although it is a common design pattern, I practiced designing the Netflix layout a long time ago and I was able to use that same pattern in my design. (Home section main content centered and items aligned to left and right on pages after the home section.)
+- [speckyboy](https://speckyboy.com/code-snippet-form-ui/) - Although I did not take any of the codes used as examples on this site, seeing how others approached forms in CSS gave me some ideas as to how to style my own.
 
-- [Julio Codes](www.patreon.com/juliocodes) - I wanted to incoorporate the nextlfix Q & A section in my app as a study page. His tutorial on how to implemenet Javascript in there was very helpful.
-
-- [ljc-dev](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0) - For my mobile responsivess, I wanted to incoorporate a hamburger menu that I see on every site. He had a guide on how to do that on the dev website. 
 
 - [Stackoflow](www.stackoverflow.com) - Links for each function from stack overflow that was tweaked will be included in the comments at the end of the JS file.
 
 ## APP SCREENSHOTS
-![](Images/screenshot1.png)
-![](Images/screenshot2.png)
-![](Images/screenshot3.png)
-![](Images/screenshot4.png)
-![](Images/screenshot5.png)
-![](Images/screenshot6.png)
-![](Images/screenshot7.png)
-![](Images/screenshot8.png)
-![](Images/screenshot12.png) ![](Images/screnshot11.png) 
-![](Images/screenshot10.png) ![](Images/screenshot9.png)
+![](public/images/screen1.png)
+![](public/images/screen2.png)
+![](public/images/screen3.png)
+![](public/images/screen4.png)
+![](public/images/screen5.png)
+![](public/images/screen6.png)
+
+
 
 ## FUTURE UPDATES
-### Most of these will require backend.
 
-- [ ] A note taking section for user to take notes in and refer to later. 
-- [ ] Make your own quiz(enter your own questons and answers) and be tested on it!
-- [ ] Add more questions with an API, especially common interview questions.
-- [ ] Include a difficulty mode. User will only be allowed 10 seconds per question.
-- [ ] Add a section that requires user to actually write out code in the quiz. Example(FizzBuzz)
-- [ ] Add a music only section with a playlist of music to help users code.
-- [ ] Add reference sites to learn how to code or do specific things you see on the website.
-
-
+- [ ] Implement an API to generate random quotes for the homepage
+- [ ] Add a functionality for user to include their own image for their blog
+- [ ] Add a functionality for user to upload image to be used as their profile avatar.
+- [ ] Add a functionality to like and comment on blogs
+- [ ] Finish the reach out functionality to send an email to the profile that is being viewed.
 
 
 

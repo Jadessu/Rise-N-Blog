@@ -16,7 +16,7 @@
     <main id="main">
       <div class="header">
         <h1 id="title"> <span class = "capitalize"><%= blog.title %></span></h1>
-        <h2><u> <%= blog.createdAt %></u></h2>
+        <h2><u> <%= blog.createdAt.toString().slice(0, 16) %></u></h2>
         <h2>From the brilliant mind of <span class = "capitalize"><%= blog.owner.name %> </span></h2>
       </div>
       <div id="img-div">
