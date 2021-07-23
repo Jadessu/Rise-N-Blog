@@ -101,8 +101,8 @@ The contributors page is where you can view a profile of anyone that has ever lo
 ![](public/images/wireframe2.png)
 ![](public/images/wireframe6.png)
 ![](public/images/wireframe2.png)
-![](public/images/wireframe3.png)
-![](public/images/wireframe4.png)
+![](public/images/profilesection.png)
+# ERD
 ![](public/images/trello.png)
 
 
@@ -123,6 +123,7 @@ The contributors page is where you can view a profile of anyone that has ever lo
 ![](public/images/screen2.png)
 ![](public/images/screen3.png)
 ![](public/images/screen4.png)
+
 ![](public/images/screen5.png) ![](public/images/screen6.png)
 
 
@@ -135,6 +136,7 @@ The contributors page is where you can view a profile of anyone that has ever lo
 - [ ] Add a functionality for user to upload image to be used as their profile avatar.
 - [ ] Add a functionality to like and comment on blogs
 - [ ] Finish the reach out functionality to send an email to the profile that is being viewed.
+- [ ] Add a format to the blogs where you can seperate them into paragraphs, highlight important text, choose your own font, etc..
 
 
 
