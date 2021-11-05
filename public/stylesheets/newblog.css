@@ -75,6 +75,7 @@ nav ul li a:hover {
 }
 
 
+
 @media (max-width: 952px) {
   label.logo {
     font-size: 30px;
@@ -116,20 +117,64 @@ nav ul li a:hover {
   }
 }
   
+
+.wrapper{
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  padding-bottom: 6rem;
+  transition: background 0.3s ease;
+  background-color: var(--white);
+  color: var(--dark2)
+}
   
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  text-transform: capitalize;
+  position: relative;
+}
+.title:before{
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.title:after{
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
 
 
-  form { max-width: px; margin:50px auto; }
+  form { max-width: px; margin:50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+   }
   
   .feedback-input {
-    color:white;
+    color:var(--dark2);
     font-family: Helvetica, Arial, sans-serif;
     font-weight:500;
     font-size: 18px;
     border-radius: 5px;
     line-height: 22px;
     background-color: transparent;
-    border:2px solid #CC6666;
+    border:2px solid var(--blueDark);
     transition: all 0.3s;
     padding: 13px;
     margin-bottom: 15px;
@@ -147,9 +192,6 @@ nav ul li a:hover {
      
   } */
 
-  .article{
-      height: 40%;
-  }
 
 
   .category{
@@ -162,9 +204,8 @@ nav ul li a:hover {
 
   #educational{
     color: whitesmoke;
-    background-color: #521207;
+    background-color: var(--dark2);
     text-transform: uppercase;
-    background-color: ;
   padding-top: 12px;
   padding-bottom: 12px;
   }
@@ -174,7 +215,7 @@ nav ul li a:hover {
   }
 
 .box select{
-    background-color: #521207;
+    background-color: var(--dark2);
   color: white;
   padding: 12px;
   width: 220px;
@@ -197,18 +238,18 @@ nav ul li a:hover {
 }
 
 
-  .feedback-input:focus { border:2px solid #CC4949; }
+  .feedback-input:focus { border:2px solid var(--dark2); }
   
   textarea {
-    height: 150px;
+    height: 200px;
     line-height: 150%;
     resize:vertical;
   }
   
   [type="submit"] {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    width: 100%;
-    background-color: #521207;
+    /* width: 100%; */
+    background-color: var(--dark2);
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -219,6 +260,24 @@ nav ul li a:hover {
     transition: all 0.3s;
     margin-top: 10px;
     font-weight:700;
+  
     
   }
-  [type="submit"]:hover { background:#CC4949; }
+  [type="submit"]:hover { background: var(--dark2); }
+
+  @media only screen 
+  and (min-device-width: 120px) 
+  and (max-device-width: 680px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+#educational{
+  display: none;
+}
+.title:before{
+ 
+  display: none;
+  
+}
+.title:after{
+  display: none;
+}
+}

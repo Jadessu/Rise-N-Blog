@@ -22,7 +22,9 @@
       <ul>
        <li><a href="/">Home</a></li>
           
-          <li><a href="/blogs/new">Create a Blog</a></li>
+                    <li><a id = "bloglink" href="/blogs">Blogs</a></li>
+
+
           <li><a href="/profiles">Contributors</a></li>
           
       </ul>
@@ -30,7 +32,11 @@
 
 <body>
     
-</div>
+<div class="wrapper">
+    <div class="title">
+          
+          <h1>Create a new Article</h1>
+        </div>
 
 <form action="/blogs" method="POST">   
     <input name="name" type="text" class="feedback-input" placeholder="Name" autocapitalize="off" />   
@@ -60,6 +66,7 @@
 </div>
     <input id = "publish" type="submit" value="Publish"/>
   </form>
+  </div>
 </body>
 </html>
 
