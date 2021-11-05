@@ -8,30 +8,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Our blogs</title>
     
 </head>
-<nav>
-  <div class="nav">
-    <ul>
-      <li><a href="/" class="nav-link">HOME</a></li>
-      <li><a href="/blogs/new" class="nav-link">CREATE A BLOG</a></li>
-      <li><a href="/profiles" class="nav-link">CONTRIBUTORS</a></li>
-      
-    </ul>
-  </div>
-    
-</nav>
+
+ <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Rise'N'Blog</label>
+      <ul>
+       <li><a href="/">Home</a></li>
+          
+          <li><a href="/blogs/new">Create a Blog</a></li>
+          <li><a href="/profiles">Contributors</a></li>
+          
+      </ul>
+    </nav>
+
 
 <body>
- 
-  <main>
-  <% if (blogs.length) { %>
-  <% blogs.forEach(blog => { %>
-    
-    <div class = "blog-post">
-        <div class = "blog-post-img">
-          <% if (  blog.category  === "Frontend Development"){ %>
+  <section>
+   <div class="wrapper">
+        <div class="title">
+          
+          <h1>Our latest blog posts</h1>
+        </div>
+        <div class="row">
+        <% if (blogs.length) { %>
+          <% blogs.forEach(blog => { %> 
+      <div class="card col-1">
+                    <a href="/blogs/<%= blog._id %>">
+
+        <div class="card-header">
+                   
+                 <% if (  blog.category  === "Frontend Development"){ %>
             <img src="/images/frontend.jpg" alt="frontend development image">
           
           <% } else if (  blog.category  === "Backend Development") { %>
@@ -45,32 +58,31 @@
           <% } else { %>
             <img src="/images/general.jpg" alt="an image about life">
           <% } %>
-          
-          
         </div>
-        <div class = "blog-post-info">
-          <div class = "blog-post-title">
-            <h2> <%= blog.title %> </h2>
-          </div>
-          
-          <div class = "blog-post-date">
-           
-            <span>
-              
-              <%= blog.createdAt.toString().slice(0, 16) %> </span>
-            <h4 id = "name">By <%= blog.name %></h1>
-          </div>
-          <div class = "blog-post-summary">
-            <p> <%= blog.summary %> </p>
-          </div>
-          <div class = "blog-post-read-more">
-            <a href = "/blogs/<%= blog._id %>">Read More </a>
+        <div class="card-body">
+          <span class="tag tag-teal"><%= blog.category %></span>
+          <h4><%= blog.title %></h4>
+          <p>
+            <%= blog.summary.substring(0, 96) + "..." %>
+          </p>
+          <div class="user">
+            <img src="https://villagesonmacarthur.com/wp-content/uploads/2020/12/Blank-Avatar.png" alt="" />
+            <div class="user-info">
+              <h5><%= blog.owner.name ? blog.owner.name : "SEI-Fellow"%></h5>
+              <div class="date">
+
+                <small> <%= blog.createdAt.toString().slice(0, 16) %></small>
+                <small>, <%= blog.createdAt.toString().slice(15, 21) %></small>
+              </div>
+            </div>
           </div>
         </div>
-        
-        
-        </div>
-        <%  }); %>
+        </a>
+      </div>
+
+      
+    
+         <%  }); %>
         <% } else { %>
           <div class="noblogs">
             <h1>There are no blogs yet</h1>
@@ -78,7 +90,11 @@
            <a  id = "bloglink" href="/blogs/new"> Create a Blog</a>
           </div>
         <% } %> 
-      </main>
+     
+    </div>
+    </div>
+
+       </section>
 </body>
 </html> 
 

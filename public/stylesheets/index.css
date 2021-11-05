@@ -1,188 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root {
+ 
+  --white: #fff;
+  --blue: #0a6bd9;
+  --blueDark: #0c5fc1;
+  --dark: #455a64;
+  --dark2: #263338;
+
+
+}
+
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-    transition: all 0.3s ease;
 }
 body{
-  height: 100vh;;
+  font-family: montserrat;
+}
+
+button a{
+  text-decoration: none;
+  color: var(--white)
+}
+nav{
+  background: var(--blue);
+  height: 80px;
   width: 100%;
-  display: flex;
-  /* background: #8E0E00; 
-background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  
-background: linear-gradient(to right, #1F1C18, #8E0E00);  */
-  background-image: url("/images/lastone3.jpg"); 
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+ color: var(--dark2);
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
 
 
- background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  .content{
+      display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  }
+}
+
+
+section{
+
+  height: calc(100vh - 80px);
+   background: url("../images/waves.svg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  color: white; 
+ 
+  
+}
+section .content{
+  margin-top: 1rem;
 
-} 
 
+}
+section .content h2{
+  font-size: 3em;
+  color:var(--dark2)
+}
+section .content p{
+  font-size: 1.2em;
+  color: var(--dark2);
+  line-height: 1.9rem;
+}
 
+.content button{
+     display: inline-block;
+    border: 2px solid var(--dark2);
+    background-color: var(--dark2);
+    color: var(--white);
+    padding: 15px 35px;
+    font-size: 15px;
+    outline: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+     transition: all 0.3s ease-in-out;
+     margin-top: 1rem;
 
-
-
-::selection{
-  color: #f2f2f2;
-  background: #f86d8d;
+}
+.content button:hover{
+  background-color: var(--white);
+    color: var(--dark);
 }
 
 
-header{
-  height: 85vh;
-  width: 90%;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 12;
-  border-radius: 25px;
-  margin: auto;
-  position: relative;
+
+section img{
+  max-width: 350px;
+  display: none;
+  
 }
-header .navbar{
-  margin: auto;
+.lottie{
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  section{
+position: relative;
   width: 100%;
-  padding: 35px 50px;
-  border-radius: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.navbar .menu{
-  display: flex;
-  flex-wrap: wrap;
-}
+   padding: 100px;
+   
 
-#logo{
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.7rem;
-}
-
-.logo i{
- width: 30px;
- padding-bottom: 10px;
-}
-.navbar .logo a{
-  text-decoration: none;
-  font-size: 22px;
-  color: rgb(238, 222, 0);
-  font-weight: 500;
-}
-.navbar .menu li{
-  list-style: none;
-  margin: 0 6px;
-}
-.navbar .menu a{
-  color: #fff;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-.navbar .menu a:hover{
-  color:rgb(186, 228, 0);;
-}
-.navbar .buttons input{
-  outline: none;
-  color: #f2f2f2;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 12px;
-  padding: 6px 15px;
-  border: none;
-  margin: 0 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-image: linear-gradient( 135deg, #ff9a9e  10%, #F6416C 100%);
-}
-.navbar .buttons input:hover{
-  transform: scale(0.97);
-}
-
-#logout{
-  color: white;
-  text-decoration: none;
-}
-
-
-#logout:hover{
-  color: yellow;
-  transform: scale(1.6);
-}
-
- header .text-content{
-   width: 40%;
-   margin: 100px 0 0 50px ;
-
- }
-.text-content h2{
-  font-size: 37px;
-  font-weight: 600;
-}
-.text-content p{
-  font-size: 20px;
-  margin-top: 30px;
-  line-height: 40px;
   
+
+
+  }
+
+  section .content{
+    max-width: 600px;
+  }
+  section img{
+    position: relative;
+  }
+.lottie{
+  display: block;
 }
-
-#name{
-  text-transform: capitalize;
+section img{
+  display: none;
 }
-
-#bloglink{
-  
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  } */
-/* }
-
-@media (max-width:850px) {
-  header .navbar{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 5px;
-  }
-  .navbar .menu {
-    margin: 10px 0 20px 0;
-  }
-  header .text-content{
-    margin: 30px 0 0 20px ;
-    width: 70%;
-  }
-  header .text-content h2{
-    font-size: 20px;
-  }
-}
-
-@media (max-width:410px) {
-  header{
-    height: 100vh;
-    width: 100%;
-    border-radius: 0px;
-  }
-  header .navbar{
-    padding: 15px 10px;
-    
-}
-
+	
 
 }

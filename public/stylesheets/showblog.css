@@ -1,110 +1,235 @@
-body {
-    background-color: white;
-    font-family: 'Roboto', sans-serif;    text-align: center;
-    color: rgba(51, 51, 51, 0.88);
+:root {
+  --white: #fff;
+  --blue: #0a6bd9;
+  --blueDark: #0c5fc1;
+  --dark: #455a64;
+  --dark2: #263338;
+
+    
+
+}
+
+
+body{
+  background-color: var(--white);
+   font: 16px/1.25 'Crimson Text', sans-serif;
     margin: 0;
-    font-size: 18px;
-    background: #8E0E00;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    
-
-  }
-  #main {
-    margin: 20px 20px;
-    padding: 30px;
-    border-radius: 15px;
-    background: hsla(38, 100%, 50%, 0.15);
-   
-  }
-  .header {
-    margin-bottom: 30px;
-  }
-  #title {
-    font-size: 50px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  #img-div {
-    background: rgba(122,122,122,0);
-    padding: 22px;
-    margin-left: 70px;
-    margin-right: 70px; 
-    border-radius: 15px;
-    opacity: 70%;
-  }
-  #image {
-    margin: 0 auto;
-    display: block;
-    max-width: 30%;
-    height: auto;
-    border-radius: 10px;
-   
-  }
-  
-  #article{
-    line-height: 2.3rem;
-    color: white;
-     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-  width: 80%;
-  margin-left: 200px;
-
-  }
-  img{
-      width: 30%;
-      border-radius: 10px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  }
-  #img-caption {
-    font-size: 16px;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    
-  }
-
-  #user-actions{
-    display: flex;
-   text-align: center;
-   align-items: center;
-   margin-left: 12%;
-    
-    justify-content: space-evenly;
-  }
-
-  #edit{
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body > div > a {
     text-decoration: none;
+}
+/* NAVBAR */
+
+nav {
+  background: var(--blue);
+  height: 80px;
+  width: 100%;
+}
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--dark2);
+  transition: 0.5s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
   }
-  h3 {
-    padding-top: 20px;
-    font-size: 25px;
+  nav ul li a {
+    font-size: 16px;
   }
-  .quote {
-    padding: 10px;
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
     font-size: 20px;
   }
-  
-  h4 {
-    font-size: 24px;
+ nav ul li a:hover,
+ nav ul li a.active {
+    background: none;
+    color: #0082e6;
   }
-  footer {
-    font-size: 18px;
+  #check:checked ~ ul {
+    left: 0;
   }
-  a:hover {
-    color: red !important;
-  }
-  a:visited {
-    color: black;
-  }
+}
 
-  .capitalize{
-    text-transform: capitalize;
-  }
+.wrapper{
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  padding-bottom: 6rem;
+  transition: background 0.3s ease;
+  background-color: var(--white);
+  color: var(--dark2)
+}
+
+.author{
+  display: flex;
+  flex-direction: column;
   
+    letter-spacing: 0.125em;
+   
+    text-transform: uppercase;
+  
+  
+}
+
+.blog-cover img{
+  border-radius: 5px 5px 0 0;
+  height: 15rem;
+  box-shadow: inset hsla(0, 0, 0, .2) 0 64px 64px 16px;
+  margin-bottom: 2rem;
+    object-fit: cover;
+  width: 100%;
+  max-width: 100vw;
+ 
+}
+.blog-tags ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  justify-content: center;
+}
+.blog-tags ul li{
+  margin:  10px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+
+
+
+/* Chapter Title */
+.blog-title h2 {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA2NCA2NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjQgNjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgICA8Zz4NCiAgICAJPHBhdGggZD0iTTAsMzJMMzIsMGwzMiwzMkwzMiw2NEwwLDMyeiBNOCwzMmwyNCwyNGwyNC0yNEwzMiw4TDgsMzJ6IE0xNiwzMmwxNi0xNmwxNiwxNkwzMiw0OEwxNiwzMnogTTI0LDMybDgsOGw4LThsLTgtOEwyNCwzMnoiIC8+DQogICAgPC9nPg0KPC9zdmc+) bottom center no-repeat;
+    background-size: 0.5em 0.5em;
+    font: 700 4vw/1.25 'Playfair Display', sans-serif;
+    letter-spacing: 0.125em;
+    /* margin: 0 0 1em 0; */
+    padding: 1em 0;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.blog-title h2:before,
+.blog-title h2:after {
+    border: solid 0 #000;
+    border-width: 0.05em 0;
+    bottom: calc((0.125em / 2) * 3);
+    content: '';
+    height: 0.15em;
+    position: absolute;
+    width: calc(50% - (1em / 2));
+}
+
+.blog-title h2:before {
+    left: 0;
+}
+
+.blog-title h2:after {
+    right: 0;
+}
+.article-summary{
+  margin-bottom: 2rem;
+}
+.article{
+  line-height: 1.5;
+  margin: 0 auto;
+   
+  
+}
+
+#user-actions button{
+     display: inline-block;
+    border: 2px solid var(--dark2);
+    background-color: var(--dark2);
+    color: var(--white);
+    padding: 15px 35px;
+    font-size: 15px;
+    outline: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+     transition: all 0.3s ease-in-out;
+     margin-top: 1rem;
+
+}
+#user-actions button:hover{
+  background-color: var(--white);
+    color: var(--dark);
+}
+
+.btn-red{
+  background-color: red;
+  color: white;
+}
+.btn-red:hover{
+  background-color: white;
+  color: red;
+}

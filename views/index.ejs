@@ -13,6 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 <% if (!user) { %>
   <link rel="stylesheet" href="/stylesheets/siwg.css">
@@ -23,7 +26,7 @@
     <title>Rise and Blog</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
       <nav class="navbar">
         <div class="logo"><a href="#">  <i class="fas fa-blog"></i><span id = "logo"> Rise'N'Blog </span></a></div>
         <ul class="menu">
@@ -51,6 +54,39 @@
           <p>"Blogging is a great way to show your talents and interests to prospective employers, while adding an edge to your resume. If you blog consistently it shows your dedication, passions and creativity – all of which are key attributes employers look for in job candidates. ” <br>
             —Lauren Conrad.</p>
         </div>
-      </header>
+      </header> -->
+       <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Rise'N'Blog</label>
+      <ul>
+       <li><a href="#">Home</a></li>
+          <li><a id = "bloglink" href="/blogs">Blogs</a></li>
+          <li><a href="/blogs/new">Create a Blog</a></li>
+          <li><a href="/profiles">Contributors</a></li>
+          <li><a href="#"></a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+    <section>
+      <div class="content">
+        <h2>Welcome,<br><%= user ? user.profile.name : "engineer" %></h2>
+        <p>Blogging is a great way to show your talents and interests to prospective employers, while adding an edge to your resume. If you blog consistently it shows your dedication, passions and creativity – all of which are key attributes employers look for in job candidates.</p> 
+        <p>
+
+          — Lauren Conrad.
+        </p> 
+
+        <button><li><a href="/blogs/new">Get Started</a></li></button>
+      </div>
+      <img src="iphone.png" alt="">
+      <lottie-player class="lottie" src="https://assets7.lottiefiles.com/packages/lf20_k27t2gov.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop  autoplay></lottie-player>
+      
+    </section>
+    </div>
+
+
 </body>
 </html> 

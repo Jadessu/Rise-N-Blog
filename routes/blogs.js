@@ -11,7 +11,7 @@ const router = Router()
 
 
 router.get("/", blogsCtrl.index)
-router.get("/new", isLoggedIn, blogsCtrl.new)
+router.get("/new",  blogsCtrl.new)
 
 router.get("/:id", blogsCtrl.show)
 router.get("/:id/edit", isLoggedIn, blogsCtrl.edit)
